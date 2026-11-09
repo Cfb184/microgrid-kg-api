@@ -21,7 +21,7 @@ RUN pip3 install --no-cache-dir --ignore-installed flask flask-cors numpy
 
 # 6. 安装与 R2022b 严格绑定的 MATLAB Python Engine (版本号 9.13)
 # 不要直接 pip install matlabengine，必须指定匹配版本，否则必报错
-RUN pip3 install --no-cache-dir matlabengine==9.13.15
+RUN pip3 install --no-cache-dir matlabengine==9.13.11
 
 # 7. 暴露 API 端口
 EXPOSE 5026
