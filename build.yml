@@ -1,0 +1,22 @@
+name: Build and Export Docker Image
+on:
+  workflow_dispatch: # 允许在网页上手动点击运行
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Build Docker Image
+        run: docker build -t microgrid-kg-api:v1 .
+
+      - name: Save Image to Tar
+        run: docker save -o microgrid-kg-api.tar microgrid-kg-api:v1
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: docker-image-artifact
+          path: microgrid-kg-api.tar
