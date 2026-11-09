@@ -17,7 +17,7 @@ COPY RMB30026.py /app/
 COPY RMB261.m /app/
 
 # 5. 安装 Python 后端库
-RUN pip3 install --no-cache-dir flask flask-cors numpy
+RUN pip3 install --no-cache-dir --ignore-installed flask flask-cors numpy
 
 # 6. 安装与 R2022b 严格绑定的 MATLAB Python Engine (版本号 9.13)
 # 不要直接 pip install matlabengine，必须指定匹配版本，否则必报错
