@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
 # 4. 设置工作目录并将你的代码拷贝进容器
 WORKDIR /app
 COPY RMB30026.py /app/
-COPY generate_kg_workspace.m /app/
+COPY RMB261.m /app/
 
 # 5. 安装 Python 后端库
 RUN pip3 install --no-cache-dir flask flask-cors numpy
